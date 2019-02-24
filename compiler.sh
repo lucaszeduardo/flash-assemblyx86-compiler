@@ -1,17 +1,27 @@
 #!/bin/bash
 
-name=$2
-name_complet=${name%*.asm}
+function VerifyFile() {
+	if [[ -f "$name" ]]
+	then
+		./$name_complet
+	else
+		echo "File '$name' not found!"
+	fi
+}
 
 function Compiling() {
 	nasm -f elf32 $name
 	ld -m elf_i386 -o $name_complet $name_complet.o
-	./$name_complet
+	VerifyFile
 }
+
 
 function Remove() {
 	rm $name_complet $name_complet.o
 }
+
+name=$2
+name_complet=${name%*.asm}
 
 h="-help"
 no_return="-n"
