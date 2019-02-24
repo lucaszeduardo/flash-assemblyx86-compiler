@@ -3,6 +3,7 @@ Compilador rápido e prático de Assembly x86
 
 # Using
 chmod +x compiler.sh
+
 $ ./compiler.sh -help
 
 # Parameters
