@@ -15,7 +15,6 @@ function Compiling() {
 	VerifyFile
 }
 
-
 function Remove() {
 	rm $name_complet $name_complet.o
 }
@@ -33,13 +32,13 @@ then
 	echo "-r -> when return"
 	echo "-help -> helper"	
 
-else if [ "$1" == "$retur" ]
+elif [ "$1" == "$no_return" ]
 then
 	Compiling
 	echo $?
 	Remove
 
-else if [ "$1" == "$no_return" ]
+elif [ "$1" == "$retur" ]
 then
 	Compiling
 	Remove
@@ -48,7 +47,3 @@ else if [ "$1" == "" ]
 then
 	echo "Err0r: use $ compiler.sh -help"
 fi
-fi
-fi
-fi
-
